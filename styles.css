@@ -92,7 +92,14 @@ body {
 }
 
 #logoutBtn{
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
+    margin: 25px;
+}
 
+#logoutBtn button{
+    border-radius: 50px;
+    width: 150px;
+    padding: 10px;
+    font-size: 150%;
 }

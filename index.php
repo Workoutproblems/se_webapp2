@@ -126,6 +126,15 @@
 </head>
 
 <body>
+
+     <div id="logoutBtn" class="">
+
+          <a href="logout.php">
+               <button class="btn btn-large btn-danger">Log Out</button>
+          </a>
+
+     </div>
+     
      <div id="heading" class="container">
           <h1>Welcome to the Admin Section</h1>
      </div>
@@ -290,13 +299,6 @@
 
      </form>
 
-     <div id="logoutBn" class="container">
-
-          <a href="logout.php">
-               <button class="btn btn-large btn-danger">Log Out</button>
-          </a>
-
-     </div>
 </body>
 
 </html>
