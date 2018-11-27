@@ -1,8 +1,8 @@
 <?php
-$conn = new mysqli('localhost', 'root', 'root', 'login');
+//$conn = new mysqli('localhost', 'root', 'root', 'login');
 
 // Nabil
-//$conn = mysqli_connect('localhost', 'user2', 'Hershey@2018', 'login');
+$conn = new mysqli('localhost', 'user2', 'Hershey@2018', 'login');
 
 
 //  DB connection check.
