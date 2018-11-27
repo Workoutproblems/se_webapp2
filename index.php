@@ -190,7 +190,9 @@
           <table class="table table-striped">
                <thead>
                     <tr>
+                         <th col="scope">Link ID</th>
                          <th col="scope">Links</th>
+                         <th col="scope">Link Type</th>
                     </tr>
                </thead>
                <tbody>
@@ -199,7 +201,21 @@
                          ?>
                     <tr>
                          <td>
-                              <?php echo $r->address; ?>
+                              <?php 
+                              echo "$r->id";
+                              ?>
+                         </td>
+
+                         <td>
+                              <?php 
+                              echo "<a target='_blank' href='". $r->address ."'>". $r->address."</a>";
+                              ?>
+                         </td>
+
+                         <td>
+                              <?php 
+                              echo "$r->LinkType";
+                              ?>
                          </td>
 
                     </tr>
@@ -219,24 +235,24 @@
      <form id="AdminAdd" class="form-group container" action="" method="post">
           <h2>Please enter information for the admin you wish to add.</h2>
           <div class="field">
-               <label for="first_name">Name</label>
+               <label for="first_name">Insert name of Admin to add</label>
                <input type="text" name="first_name" class="form-control" id="first_name" autocomplete="off">
           </div>
 
           <div class="field">
-               <label for="last_name">Password</label>
+               <label for="last_name">Please enter the password for the above Admin</label>
                <input type="text" name="last_name" class="form-control" id="last_name" autocomplete="off">
           </div>
 
           <div class="field">
-               <label for="bio">Admin Type</label>
+               <label for="bio">Enter the Admin Type</label>
                <input class="form-control" name="bio" id="bio"></input>
           </div>
 
           <input id="insertBtn" class="form-control btn btn-primary" type="submit" value="Insert Admin">
 
           <div class="field">
-               <label for="bio">Name</label>
+               <label for="bio">Insert name of Admin to delete</label>
                <input class="form-control" type="text" name="Name" id="Name"></textarea>
           </div>
           <input id="insertBtn" class="form-control btn btn-danger" type="submit" value="Delete Admin">
@@ -246,15 +262,17 @@
      <hr>
 
      <form id="LinkAdd" class="form-group container" action="" method="post">
-     <h2>Please enter information for the links you wish to add.</h2>
+          <h2>Please enter information for the links you wish to add.</h2>
 
           <div class="field">
-               <label for="bio">Add Link</label>
+               <label for="bio">Add Link </label>
                <input class="form-control" type="text" name="addlink" id="addlink">
+               <p>(Please make sure to add https:// before the link)</p>
           </div>
           <div class="field">
                <label for="bio">Link Type</label>
                <input class="form-control" type="text" name="linktype" id="linktype">
+               <p>(Determines which Admin gets which link)</p>
           </div>
           <input id="insertBtn" class="form-control btn btn-primary" type="submit" value="Add Link">
 
@@ -266,11 +284,19 @@
           <div class="field">
                <label for="bio">Link ID</label>
                <input class="form-control" type="text" name="deletelink" id="deletelink">
+               <p>(Insert Link ID you wish to delete from above table)</p>
           </div>
           <input id="insertBtn" class="form-control btn btn-danger" type="submit" value="Delete Link">
 
      </form>
 
+     <div id="logoutBn" class="container">
+
+          <a href="logout.php">
+               <button class="btn btn-large btn-danger">Log Out</button>
+          </a>
+
+     </div>
 </body>
 
 </html>

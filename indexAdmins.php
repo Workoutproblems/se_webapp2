@@ -63,7 +63,7 @@
                          <tr>
                               <td>
                                    <?php 
-                                   echo "<a href='". $r->address ."'>". $r->address."</a>"; 
+                                   echo "<a target='_blank' href='". $r->address ."'>". $r->address."</a>"; 
                                    ?>
                               </td>
 
@@ -83,7 +83,13 @@
 
      </div>
 
+     <div class="container">
 
+          <a href="logout.php">
+               <button class="btn btn-large btn-danger">Log Out</button>
+          </a>
+
+     </div>
 </body>
 
 </html>
