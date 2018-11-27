@@ -66,6 +66,7 @@ if ($result = $conn->query($query)) {
             while($res = $results->fetch_assoc()) {
 
                   printf("%s %s %s", $res['id'], $res['address'], $res['LinkType'].'<br>');
+
             }
 
 
