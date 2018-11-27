@@ -1,10 +1,14 @@
-<?php 
+<?php
+     session_start();
      error_reporting(0);
      require 'connect.php';
      require 'security.php';
      require 'loginDBConn.php';
 
 
+
+     //  Get Users AdminType and record for filtering
+     //$admin = $conn->query("S");
 
      if ($results = $conn->query("SELECT * FROM links")) {
           if ($results->num_rows) {
@@ -25,6 +29,7 @@
 </head>
 <body>
      <h3>People</h3>
+     <?php echo $_SESSION['usern']; ?>
      <?php 
      if(!count($records)){
                echo 'No records';
@@ -40,12 +45,16 @@
                <tbody>
                          <?php 
                          foreach ($records as $r) {
+                         
+                         if ($r->LinkType == $_SESSION['usern']) {
                          ?>
                               <tr>
                                    <td><?php echo $r->address; ?></td>
 
                               </tr>
-                         <?php 
+                         <?php
+                         }
+                         
                          }
                          ?>
                </tbody>

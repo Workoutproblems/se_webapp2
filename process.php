@@ -12,6 +12,8 @@ $password = $_POST['pass'];
 
 
 
+
+
 //  Login SQL
 $query = "SELECT * FROM users WHERE username = '$username'";
 
@@ -27,7 +29,7 @@ if ($result = $conn->query($query)) {
 
      }
      else if ($username == $res['username'] && $password == $res['password']) {
-          
+          $_SESSION['usern'] = $res['AdminType'];
           header('Location:indexAdmins.php');
           die();
             //  Display all users

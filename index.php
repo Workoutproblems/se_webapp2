@@ -196,5 +196,24 @@
           <input type="submit" value="Delete Admin">
 
      </form>
+
+
+
+
+     <form action="" method="post">
+
+
+
+          <div class="field">
+               <label for="bio">Link</label>
+               <input type="text" name="Name" id="Name"></textarea>
+          </div>
+          <input type="submit" value="Delete Link">
+
+     </form>
+
+
+
+
 </body>
 </html>
