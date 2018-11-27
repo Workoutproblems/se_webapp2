@@ -33,10 +33,8 @@
           <table>
                <thead>
                     <tr>
-                         <th>Name</th>
-                         <th>Pass</th>
-                         <th>Type</th>
-                         <th>Created</th>
+                         <th>Adresses</th>
+
                     </tr>
                </thead>
                <tbody>
