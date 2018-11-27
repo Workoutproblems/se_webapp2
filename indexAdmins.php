@@ -25,7 +25,6 @@
 
 <head>
      <meta charset="UTF-8">
-     <title>Login</title>
      <link rel="stylesheet" type="text/css" href="styles.css">
      <!-- Latest compiled and minified CSS -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -35,43 +34,55 @@
 </head>
 
 <body>
-     <h3>People</h3>
-     <?php echo $_SESSION['admin_name']."<br>".$_SESSION['usern']; ?>
-     <?php 
+     <div id="adminview" class="container">
+          <!-- Prints out the name of the admin that has logged in. -->
+          <div class="jumbotron" id="welcome">
+               <?php echo "<h1>Welcome, ".$_SESSION['admin_name'].".</h1>"."<br> <h2>Your Admin Number is ".$_SESSION['usern']."</h2>"; ?>
+
+          </div>
+
+          <?php 
      if(!count($records)){
                echo 'No records';
      } else {
      ?>
-     <table class="table table-striped">
-          <thead>
-               <tr>
-                    <th scope="col">Adresses</th>
-
-               </tr>
-          </thead>
-          <tbody>
-               <?php 
+          <div class="container">
+               <table class="table table-striped">
+                    <h2>Here are your links,</h2>
+                    <thead>
+                         <tr>
+                              <th scope="col">Links</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <?php 
                          foreach ($records as $r) {
                          
                          if ($r->LinkType == $_SESSION['usern']) {
                          ?>
-               <tr>
-                    <td>
-                         <?php echo $r->address; ?>
-                    </td>
+                         <tr>
+                              <td>
+                                   <?php 
+                                   echo "<a href='". $r->address ."'>". $r->address."</a>"; 
+                                   ?>
+                              </td>
 
-               </tr>
-               <?php
+                         </tr>
+                         <?php
                          }
                          
                          }
                          ?>
-          </tbody>
-     </table>
-     <?php 
+                    </tbody>
+               </table>
+               <?php 
      }
      ?>
-     <hr>
+               <hr>
+          </div>
+
+     </div>
+
 
 </body>
 
