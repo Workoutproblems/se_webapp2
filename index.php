@@ -113,43 +113,67 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
 
+<head>
+     <meta charset="UTF-8">
+     <title>Login</title>
+     <link rel="stylesheet" type="text/css" href="styles.css">
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
      <title>People DB</title>
 
 </head>
+
 <body>
-     <h3>People</h3>
+     <div id="heading" class="container">
+          <h1>Welcome to the Admin Section</h1>
+     </div>
      <?php 
      if(!count($records)){
                echo 'No records';
      } else {
      ?>
-          <table>
+     <div class="container">
+
+          <h3>Admins</h3>
+          <table class="table table-striped">
                <thead>
                     <tr>
-                         <th>Name</th>
-                         <th>Pass</th>
-                         <th>Type</th>
-                         <th>Created</th>
+                         <th col="scope">Name</th>
+                         <th col="scope">Pass</th>
+                         <th col="scope">Type</th>
+                         <th col="scope">Created</th>
                     </tr>
                </thead>
                <tbody>
-                         <?php 
+                    <?php 
                          foreach ($records as $r) {
                          ?>
-                              <tr>
-                                   <td><?php echo $r->first_name; ?></td>
-                                   <td><?php echo $r->last_name; ?></td>
-                                   <td><?php echo $r->bio; ?></td>
-                                   <td><?php echo $r->created; ?></td>
-                                   <td><?php echo $r->twitter_handel; ?></td>
-                              </tr>
-                         <?php 
+                    <tr>
+                         <td>
+                              <?php echo $r->first_name; ?>
+                         </td>
+                         <td>
+                              <?php echo $r->last_name; ?>
+                         </td>
+                         <td>
+                              <?php echo $r->bio; ?>
+                         </td>
+                         <td>
+                              <?php echo $r->created; ?>
+                         </td>
+                         <td>
+                              <?php echo $r->twitter_handel; ?>
+                         </td>
+                    </tr>
+                    <?php 
                          }
                          ?>
                </tbody>
           </table>
+     </div>
+
      <?php 
      }
      ?>
@@ -157,114 +181,96 @@
 
 
 
-
-     <h3>Links</h3>
-     <?php 
+     <div class="container">
+          <?php 
      if(!count($links)){
                echo 'No records';
      } else {
      ?>
-          <table>
+          <table class="table table-striped">
                <thead>
                     <tr>
-                         <th>Links</th>
-
+                         <th col="scope">Links</th>
                     </tr>
                </thead>
                <tbody>
-                         <?php 
+                    <?php 
                          foreach ($links as $r) {
                          ?>
-                              <tr>
-                                   <td><?php echo $r->address; ?></td>
+                    <tr>
+                         <td>
+                              <?php echo $r->address; ?>
+                         </td>
 
-                              </tr>
-                         <?php 
+                    </tr>
+                    <?php 
                          }
                          ?>
                </tbody>
           </table>
-     <?php 
+          <?php 
      }
      ?>
-     <hr>
+          <hr>
+     </div>
 
 
 
-
-
-
-
-
-
-
-
-     <form action="" method="post">
-
+     <form id="AdminAdd" class="form-group container" action="" method="post">
+          <h2>Please enter information for the admin you wish to add.</h2>
           <div class="field">
                <label for="first_name">Name</label>
-               <input type="text" name="first_name" id="first_name" autocomplete="off">
+               <input type="text" name="first_name" class="form-control" id="first_name" autocomplete="off">
           </div>
 
           <div class="field">
-               <label for="last_name">Pass</label>
-               <input type="text" name="last_name" id="last_name" autocomplete="off">
+               <label for="last_name">Password</label>
+               <input type="text" name="last_name" class="form-control" id="last_name" autocomplete="off">
           </div>
 
           <div class="field">
-               <label for="bio">Type</label>
-               <textarea name="bio" id="bio"></textarea>
+               <label for="bio">Admin Type</label>
+               <input class="form-control" name="bio" id="bio"></input>
           </div>
 
-          <input type="submit" value="Insert Admin">
+          <input id="insertBtn" class="form-control btn btn-primary" type="submit" value="Insert Admin">
 
           <div class="field">
                <label for="bio">Name</label>
-               <input type="text" name="Name" id="Name"></textarea>
+               <input class="form-control" type="text" name="Name" id="Name"></textarea>
           </div>
-          <input type="submit" value="Delete Admin">
+          <input id="insertBtn" class="form-control btn btn-danger" type="submit" value="Delete Admin">
 
      </form>
 
      <hr>
 
-     <form action="" method="post">
-
+     <form id="LinkAdd" class="form-group container" action="" method="post">
+     <h2>Please enter information for the links you wish to add.</h2>
 
           <div class="field">
                <label for="bio">Add Link</label>
-               <input type="text" name="addlink" id="addlink"></textarea>
+               <input class="form-control" type="text" name="addlink" id="addlink">
           </div>
           <div class="field">
                <label for="bio">Link Type</label>
-               <input type="text" name="linktype" id="linktype"></textarea>
+               <input class="form-control" type="text" name="linktype" id="linktype">
           </div>
-          <input type="submit" value="Add Link">
+          <input id="insertBtn" class="form-control btn btn-primary" type="submit" value="Add Link">
 
      </form>
 
-
-
-
-
-
-     <form action="" method="post">
+     <form id="LinkAdd" class="form-group container" action="" method="post">
 
 
           <div class="field">
                <label for="bio">Link ID</label>
-               <input type="text" name="deletelink" id="deletelink"></textarea>
+               <input class="form-control" type="text" name="deletelink" id="deletelink">
           </div>
-          <input type="submit" value="Delete Link">
+          <input id="insertBtn" class="form-control btn btn-danger" type="submit" value="Delete Link">
 
      </form>
 
-
-
-
-
-
-
-
 </body>
+
 </html>

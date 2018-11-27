@@ -22,11 +22,18 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
 
+<head>
+     <meta charset="UTF-8">
+     <title>Login</title>
+     <link rel="stylesheet" type="text/css" href="styles.css">
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
      <title>People DB</title>
 
 </head>
+
 <body>
      <h3>People</h3>
      <?php echo $_SESSION['admin_name']."<br>".$_SESSION['usern']; ?>
@@ -35,34 +42,37 @@
                echo 'No records';
      } else {
      ?>
-          <table>
-               <thead>
-                    <tr>
-                         <th>Adresses</th>
+     <table class="table table-striped">
+          <thead>
+               <tr>
+                    <th scope="col">Adresses</th>
 
-                    </tr>
-               </thead>
-               <tbody>
-                         <?php 
+               </tr>
+          </thead>
+          <tbody>
+               <?php 
                          foreach ($records as $r) {
                          
                          if ($r->LinkType == $_SESSION['usern']) {
                          ?>
-                              <tr>
-                                   <td><?php echo $r->address; ?></td>
+               <tr>
+                    <td>
+                         <?php echo $r->address; ?>
+                    </td>
 
-                              </tr>
-                         <?php
+               </tr>
+               <?php
                          }
                          
                          }
                          ?>
-               </tbody>
-          </table>
+          </tbody>
+     </table>
      <?php 
      }
      ?>
      <hr>
 
 </body>
+
 </html>
