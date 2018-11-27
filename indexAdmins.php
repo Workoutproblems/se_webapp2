@@ -6,7 +6,7 @@
 
 
 
-     if ($results = $db->query("SELECT * FROM people")) {
+     if ($results = $conn->query("SELECT * FROM links")) {
           if ($results->num_rows) {
                while ($row = $results->fetch_object()) {
                     $records[] = $row;
@@ -44,11 +44,8 @@
                          foreach ($records as $r) {
                          ?>
                               <tr>
-                                   <td><?php echo $r->first_name; ?></td>
-                                   <td><?php echo $r->last_name; ?></td>
-                                   <td><?php echo $r->bio; ?></td>
-                                   <td><?php echo $r->created; ?></td>
-                                   <td><?php echo $r->twitter_handel; ?></td>
+                                   <td><?php echo $r->address; ?></td>
+
                               </tr>
                          <?php 
                          }
