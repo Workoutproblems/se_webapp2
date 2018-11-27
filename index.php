@@ -45,13 +45,14 @@
      if (isset($_POST['Name'])) {
 
      //  Delete a user 2nd DB.
-     $del = $_POST['Name'];
-      $query = "DELETE FROM `users` WHERE `users`.`username`='$del'";
-      if ($conn->query($query)) {
-           echo "Success deletion from users db<br>";
-      }else {
-           echo "did not delete from users db<br>";
-      }
+          $del = $_POST['Name'];
+          // POSSIBLE BUG username =? $del;
+          $query = "DELETE FROM `users` WHERE `users`.`username`='$del'";
+          if ($conn->query($query)) {
+               echo "Success deletion from users db<br>";
+          }else {
+               echo "did not delete from users db<br>";
+          }
 
 
           $name = $_POST['Name'];
@@ -60,6 +61,34 @@
                echo "Success deletion<br>";
           }else {
                echo "did not delete<br>";
+          }
+     }
+
+     //  REMOVE LINK, SAME AS REMOVING AN ADMIN
+     if (isset($_POST['deletelink'])) {
+
+          $del = $_POST['deletelink'];
+          $query = "DELETE FROM `links` WHERE `links`.`id` = '$del'";
+          if ($conn->query($query)) {
+               echo "Success, link removed.<br>";
+          }
+          else {
+               echo "did not remove link.<br>";
+          }
+
+     }
+
+     if (isset($_POST['addlink'])) {
+
+          $linkaddress = $_POST['addlink'];
+          $linktype = $_POST['linktype'];
+          // STILL NEED A LINK TYPE...
+          $query = "INSERT INTO `links` (`address`, `LinkType`) VALUES ('$linkaddress', $linktype)";
+          
+          if ($result = $conn->query($query)) {
+               echo "New link created.<br>";
+          }else {
+               echo "error inserting link.<br>";
           }
      }
 
@@ -197,20 +226,42 @@
 
      </form>
 
+     <hr>
+
+     <form action="" method="post">
+
+
+          <div class="field">
+               <label for="bio">Add Link</label>
+               <input type="text" name="addlink" id="addlink"></textarea>
+          </div>
+          <div class="field">
+               <label for="bio">Link Type</label>
+               <input type="text" name="linktype" id="linktype"></textarea>
+          </div>
+          <input type="submit" value="Add Link">
+
+     </form>
+
+
+
 
 
 
      <form action="" method="post">
 
 
-
           <div class="field">
-               <label for="bio">Link</label>
-               <input type="text" name="Name" id="Name"></textarea>
+               <label for="bio">Link ID</label>
+               <input type="text" name="deletelink" id="deletelink"></textarea>
           </div>
           <input type="submit" value="Delete Link">
 
      </form>
+
+
+
+
 
 
 

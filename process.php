@@ -30,6 +30,7 @@ if ($result = $conn->query($query)) {
      }
      else if ($username == $res['username'] && $password == $res['password']) {
           $_SESSION['usern'] = $res['AdminType'];
+          $_SESSION['admin_name'] = $res['username'];
           header('Location:indexAdmins.php');
           die();
             //  Display all users
