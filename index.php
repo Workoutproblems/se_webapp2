@@ -73,6 +73,14 @@
           }
      }
      //echo '<pre>', print_r($records) ,'</pre>';
+     if ($results = $conn->query("SELECT * FROM links")) {
+          if ($results->num_rows) {
+               while ($row = $results->fetch_object()) {
+                    $links[] = $row;
+               }
+               $results->free();
+          }
+     }
 ?>
 <!DOCTYPE html>
 <html>
@@ -118,6 +126,50 @@
      ?>
      <hr>
 
+
+
+
+     <h3>Links</h3>
+     <?php 
+     if(!count($links)){
+               echo 'No records';
+     } else {
+     ?>
+          <table>
+               <thead>
+                    <tr>
+                         <th>Links</th>
+
+                    </tr>
+               </thead>
+               <tbody>
+                         <?php 
+                         foreach ($links as $r) {
+                         ?>
+                              <tr>
+                                   <td><?php echo $r->address; ?></td>
+
+                              </tr>
+                         <?php 
+                         }
+                         ?>
+               </tbody>
+          </table>
+     <?php 
+     }
+     ?>
+     <hr>
+
+
+
+
+
+
+
+
+
+
+
      <form action="" method="post">
 
           <div class="field">
@@ -135,13 +187,13 @@
                <textarea name="bio" id="bio"></textarea>
           </div>
 
-          <input type="submit" value="Insert">
+          <input type="submit" value="Insert Admin">
 
           <div class="field">
                <label for="bio">Name</label>
                <input type="text" name="Name" id="Name"></textarea>
           </div>
-          <input type="submit" value="Delete">
+          <input type="submit" value="Delete Admin">
 
      </form>
 </body>
