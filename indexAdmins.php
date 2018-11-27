@@ -29,7 +29,7 @@
 </head>
 <body>
      <h3>People</h3>
-     <?php echo $_SESSION['usern']; ?>
+     <?php echo $_SESSION['admin_name']."<br>".$_SESSION['usern']; ?>
      <?php 
      if(!count($records)){
                echo 'No records';
