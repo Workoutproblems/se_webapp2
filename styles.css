@@ -14,7 +14,7 @@ body {
 }
 
 #left {
-    background-image: url(https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/06/tools.jpg);
+    background-color: rgba(29, 51, 252, 0.596);
 }
 
 
@@ -22,8 +22,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-top: 15%;
 }
 
+#cname{
+    margin-top: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
 .jumbotron h2{
     text-align: center;
