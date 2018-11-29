@@ -241,6 +241,16 @@
           <hr>
      </div>
 
+     <div class="container">
+          <h4>Note:</h4>
+
+          <ol>
+               <li>Any Admin with Type 1 is a super user. Anyone assigned Type 1 will have access to this page.</li>
+               <li>Admins with Type greater than 1 are regular admins.</li>
+               <li>In order to assign links to a certain admin, Admin Type must be equal to Link Type</li>
+               <li>If you wish to delete a link, insert the Link ID.</li>
+          </ol>
+     </div>
 
 
      <form id="AdminAdd" class="form-group container" action="" method="post">
