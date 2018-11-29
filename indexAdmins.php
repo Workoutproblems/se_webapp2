@@ -35,13 +35,6 @@
 
 <body>
 
-     <div id="logoutBtn" class="">
-
-          <a href="logout.php">
-               <button class="btn btn-large btn-danger">Log Out</button>
-          </a>
-
-     </div>
      <div id="adminview" class="container">
           <!-- Prints out the name of the admin that has logged in. -->
           <div class="jumbotron" id="welcome">
@@ -49,6 +42,13 @@
 
           </div>
 
+          <div id="logoutBtn" class="">
+
+               <a href="logout.php">
+                    <button class="btn btn-large btn-danger">Log Out</button>
+               </a>
+
+          </div>
           <?php 
      if(!count($records)){
                echo 'No records';

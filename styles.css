@@ -5,10 +5,38 @@ body {
 }
 
 /* Login Form */
-#loginbox h1 {
-    margin-top: 10%;
+#twosided {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+#left {
+    background-image: url(https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/06/tools.jpg);
+}
+
+
+#loginbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.jumbotron h2{
     text-align: center;
-    font-weight: bold;
+}
+
+.jumbotron h1 {
+    text-align: center;
+    font-family: Impact;
+}
+
+#loginbox h2 {
+    text-align: center;
+    margin-top: 5%;
 }
 
 #logincred {
@@ -16,7 +44,18 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-top: 5%;
-    width: 30%;
+    width: 50%;
+}
+
+#logincred input{
+    padding: 15px, 5px, 15px, 5px;
+    font-size: 24px;
+    height: auto;
+}
+
+#logincred label{
+    font-size: 18px;
+    height: auto;
 }
 
 #pwd {
@@ -24,15 +63,15 @@ body {
 }
 
 #btn {
-    width: 30%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-top: 10%;
+    border-radius: 30px;
+    width: 200px;
 }
 
 
 /* Admin View Section */
-
 #adminview{
     display: flex;
     flex-direction: column;

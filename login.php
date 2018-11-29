@@ -3,6 +3,8 @@
 
 <head>
    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Login</title>
    <link rel="stylesheet" type="text/css" href="styles.css">
    <!-- Latest compiled and minified CSS -->
@@ -12,23 +14,29 @@
 
 <body>
 
-   <form class="form-control" action="process.php" method="POST">
-      <div class="container-fluid" id="loginbox">
+<div class="container-fluid" id="twosided">
+<div class="container" id="left">
+</div>
 
-         <h1>Please Log in below</h1>
+   <div class="container" id="loginbox">
+   <div class="jumbotron">
+   <h1>MauveHouse Marketing Services</h1>
+   </div>
+      <form class="form-group" action="process.php" method="POST">
+         <h2>Please Log in below</h2>
          <div class="container" id="logincred">
             <label id="usr">Username:</label>
-            <input type="text" id="user" name="user" />
+            <input class="form-control" type="text" id="user" name="user" />
 
             <label id="pwd">Password:</label>
-            <input type="password" id="pass" name="pass" />
+            <input class="form-control" type="password" id="pass" name="pass" />
 
             <button type="submit" class="btn btn-lg btn-primary" id="btn" value="Login">Log In</button>
          </div>
+      </form>
+   </div>
+</div>
 
-      </div>
-
-   </form>
 </body>
 
 </html>
