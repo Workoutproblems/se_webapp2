@@ -40,6 +40,12 @@ if ($result = $conn->query($query)) {
            die();
 
      }
+     //  Empty input check.
+     else if (empty($username) || empty($password)) {
+
+            header('Location:login.php');
+            die();
+      }
      else if ($username == $res['username'] && $password == $res['password']) {
           $_SESSION['usern'] = $res['AdminType'];
           $_SESSION['admin_name'] = $res['username'];
@@ -109,13 +115,6 @@ if ($result = $conn->query($query)) {
      //        }
             
      // }
-      
-     //  Empty input check.
-      else if (empty($username) || empty($password)) {
-
-            header('Location:login.php');
-            die();
-     }
 
      //  Incorrect input check.
      else {
