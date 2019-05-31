@@ -2,6 +2,9 @@
 ## Admin Portal
 ### Due Date: November 30, 2018 23:59:59
 
+![alt text](/se_portal_demo.gif)
+
+
 Description: 
 You have been asked to build an admin portal that will allow your company internal employees to access the portal and perform admin functions on behalf of company clients.
 
